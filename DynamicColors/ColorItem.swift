@@ -18,9 +18,9 @@ struct ColorItem : View {
 					.fill(self.input.color)
 			}
 			VStack {
-				Text("R: \(self.input.rValue)")
-				Text("G: \(self.input.gValue)")
-				Text("B: \(self.input.bValue)")
+				Text("R: \(self.input.rValue)").allowsTightening(true) // without this iPhone Xs Max was truncated
+				Text("G: \(self.input.gValue)").allowsTightening(true)
+				Text("B: \(self.input.bValue)").allowsTightening(true)
 				}.foregroundColor(input.textColor)
 			}.frame(width: 100, height: 100)
 	}

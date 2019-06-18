@@ -11,6 +11,8 @@ import SwiftUI
 struct ColorRow: View {
 	let color: ColorItem.ColorKind
 
+	@Environment(\.horizontalSizeClass) var hSizeClass: UserInterfaceSizeClass?
+
 	init(_ color: ColorItem.ColorKind) {
 		self.color = color
 	}
@@ -27,13 +29,23 @@ struct ColorRow: View {
 
 	var body: some View {
 		HStack(spacing: 0) {
+			if hSizeClass == .regular {
+				Spacer()
+					.frame(minWidth: 0, maxWidth: .infinity)
+			}
 			ColorItemWrapper(color: color)
 				.environment(\.colorScheme, .light)
 			Spacer()
+				.frame(minWidth: 0, maxWidth: .infinity)
 			Text(name)
 			Spacer()
+				.frame(minWidth: 0, maxWidth: .infinity)
 			ColorItemWrapper(color: color)
 				.environment(\.colorScheme, .dark)
+			if hSizeClass == .regular {
+				Spacer()
+					.frame(minWidth: 0, maxWidth: .infinity)
+			}
 
 			/*
 			// It's currently not possible to override the color scheme contrast (readonly)

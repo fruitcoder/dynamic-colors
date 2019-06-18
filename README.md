@@ -10,4 +10,5 @@ It seems like SwiftUI doesn't have access to some UIKit colors (sections *System
 
 The purpose of `ColorItemWrapper` is to observe changes to the color scheme environment value and push those changes into the `ColorItem`. I couldn't find a way to make this work without the wrapper.
 
+## Screenshot
 ![Screenshot of simulator](https://github.com/fruitcoder/dynamic-colors/blob/master/Preview.png)

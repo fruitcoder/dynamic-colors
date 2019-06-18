@@ -31,20 +31,18 @@ struct ColorRow: View {
 		HStack(spacing: 0) {
 			if hSizeClass == .regular {
 				Spacer()
-					.frame(minWidth: 0, maxWidth: .infinity)
+					.frame(width: 100)
 			}
 			ColorItemWrapper(color: color)
 				.environment(\.colorScheme, .light)
 			Spacer()
-				.frame(minWidth: 0, maxWidth: .infinity)
 			Text(name)
 			Spacer()
-				.frame(minWidth: 0, maxWidth: .infinity)
 			ColorItemWrapper(color: color)
 				.environment(\.colorScheme, .dark)
 			if hSizeClass == .regular {
 				Spacer()
-					.frame(minWidth: 0, maxWidth: .infinity)
+					.frame(width: 100)
 			}
 
 			/*
